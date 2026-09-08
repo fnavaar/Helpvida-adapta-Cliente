@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "adapta-cliente-handoff/v1",
+  "phase": 1,
+  "versions": {
+    "package": "1.0.0",
+    "adapta": "1.0.0",
+    "adaptaCliente": "1.0.0"
+  },
+  "generatedAt": "2026-09-08T14:03:58.534Z",
+  "files": [
+    {
+      "path": "04_fase-atual/fase.md",
+      "sha256": "37deb9adb2794abc030e1b954d91a9225cd30b63aa0014f7fc854f2bba5df3d9",
+      "classification": "fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/spec-1-001-controles-de-acesso-e-dados.md",
+      "sha256": "0295e6cfe12187a48851e7855369afae44ba76144d1670d20a01c36ee8d38911",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/spec-1-002-captura-e-entrada-assistida.md",
+      "sha256": "350f7895a87dec58e588bb1072396d5705962210c013f6345295cf913364ff7c",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/spec-1-003-extracao-assistida-e-conferencia.md",
+      "sha256": "c6d1bb97f1035473c8e9152cbff9ae00bddcad69d00705df47419b9d00d17277",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/spec-1-004-template-preenchido-e-medicao.md",
+      "sha256": "1267da1e5d49b5878c2c88a5144ef5c8358f26fe1279fbe78137909131d2b3cb",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/spec-1-005-prova-scraping-e-fallback.md",
+      "sha256": "967c26e9f38a6e91ae32e6469a79ad7fbaa34e56a45a7b3835043057f0a4b3f7",
+      "classification": "spec-fase-atual"
+    }
+  ]
+}
