@@ -2,13 +2,13 @@
 
 **Origem:** SPEC-1-001..005 aprovadas em 08/09/2026  
 **Regra de execução:** somente uma task por vez; conclusão exige TDD da SPEC, evidência e teste humano explícito  
-**Estado:** tasks geradas; nenhuma implementação autorizada
+**Estado:** F1-T01 autorizada para execução
 
 ## Tasks
 
 | ID | Task | Dono | SPEC | Critério | Subseção exata | Recorte da prova | Evidência esperada | Pré-condições | Ponto de parada | Estado final | Leva | Status |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| F1-T01 | Configurar papéis, negação por padrão e trilha sintética | Fernando/TI | SPEC-1-001 | CA-1-001..004 | Dados e permissões; Fluxo e regras; TDD RED→GREEN | Executar primeiro o RED da matriz não aplicada; depois aplicar a matriz com Operador, Conferente e Admin e provar ações permitidas/negadas e eventos sanitizados | resultado da suíte + log sanitizado + matriz aplicada | B-ENV-01 resolvido; ambiente/repositório autorizados; FIX sintética revisada | parar antes de dado real, permissão fora da matriz ou acesso de suporte sem autorização temporal | RBAC e auditoria funcionais com fixture; nenhuma permissão implícita | 1 | Bloqueada — B-ENV-01 |
+| F1-T01 | Configurar papéis, negação por padrão e trilha sintética | Fernando/TI | SPEC-1-001 | CA-1-001..004 | Dados e permissões; Fluxo e regras; TDD RED→GREEN | Executar primeiro o RED da matriz não aplicada; depois aplicar a matriz com Operador, Conferente e Admin e provar ações permitidas/negadas e eventos sanitizados | resultado da suíte + log sanitizado + matriz aplicada | B-ENV-01 resolvido; ambiente/repositório autorizados; FIX sintética revisada | parar antes de dado real, permissão fora da matriz ou acesso de suporte sem autorização temporal | RBAC e auditoria funcionais com fixture; nenhuma permissão implícita | 1 | Autorizada |
 | F1-T02 | Provar expiração da fixture e bloqueio de dado real | Fernando/TI | SPEC-1-001 | CA-1-005..006 | Dados e permissões — coluna Retenção; Checklist; TDD REFACTOR/REGRESSÃO | Expirar/excluir fixture e tentar ingestão marcada como real sem B-DADOS-01 | prova de remoção + teste de recusa + inspeção de logs | F1-T01 aceita; fixture revisada conforme checklist da SPEC-1-001 | parar se a remoção não for demonstrável ou se dado real entrar | fixture removida/expirada e guard de dado real ativo; RBAC preservado | 2 | Bloqueada — depende F1-T01 |
 | F1-T03 | Implementar entrada assistida com protocolo e fila | Fernando/TI | SPEC-1-002 | CA-1-007..009 | Dados e regras; Fluxo e cenários — Principal; TDD RED/GREEN | Executar FIX-01 e FIX-04 mais cenário com obrigatório vazio: criar uma ocorrência, rejeitar obrigatório/arquivo inválido e localizar um único protocolo na fila | capturas sanitizadas + protocolo + evento de auditoria + teste | F1-T01 aceita; B-ARQ-01 homologado; usar exclusivamente recorte sintético até B-PILOTO-01 e B-DADOS-01 | parar antes de IA/template/scraping ou diante de superfície não nomeada | entrada assistida sintética funcional; ocorrência única em recebido | 2 | Bloqueada — depende F1-T01 e B-ARQ-01; recorte sintético |
 | F1-T04 | Provar baixa qualidade, retry, duplicidade e fallback de captura | Fernando/TI | SPEC-1-002 | CA-1-010..012 | Cenários Baixa qualidade/Duplicidade/Offline; TDD REGRESSÃO | Executar FIX-02/FIX-05, timeout e captura indisponível; repetir confirmação com mesma chave | relatório de regressão + protocolos reconciliados + prova de ausência/remoção de rascunho | F1-T03 aceita; dispositivo-alvo de teste disponível | parar se houver duplicação, cópia local insegura ou confirmação sem protocolo | captura resiliente; fallback assistido operacional; nenhuma duplicata silenciosa | 3 | Bloqueada — depende F1-T03 |
@@ -21,7 +21,7 @@
 
 ## Elegibilidade inicial
 
-Nenhuma task está autorizada para implementação por esta geração. A primeira candidata lógica é **F1-T01**, mas permanece bloqueada até `B-ENV-01` e autorização explícita do ambiente/repositório.
+A task **F1-T01** está autorizada e liberada pelo cliente para execução. As demais tasks (F1-T02..F1-T10) permanecem bloqueadas aguardando a conclusão de seus precedentes e respectivos gates.
 
 ## Gates preservados
 
